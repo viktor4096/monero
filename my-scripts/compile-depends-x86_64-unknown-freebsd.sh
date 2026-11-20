@@ -31,7 +31,7 @@ git apply my-scripts/enable-manual-submodules.patch
 # update randomx to the latest patch
 cd external/randomx/
 git checkout master
-cd $(git rev-parse --show-toplevel)
+cd ../..
 
 # start compilation
 USE_DEVICE_TREZOR=OFF make depends target=x86_64-unknown-freebsd -j$(nproc)
