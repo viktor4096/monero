@@ -25,6 +25,10 @@ chmod +x /tmp/rust-env/rustup-init
 # add target x86_64-unknown-freebsd
 rustup target add x86_64-unknown-freebsd
 
+# resync submodules
+cd $(git rev-parse --show-toplevel)
+git submodule update --init --force
+
 # apply patch to allow manual submodules
 git apply my-scripts/enable-manual-submodules.patch
 
